@@ -40,18 +40,17 @@ class AppionmentController extends Controller
            $html.='<option>'.$doctor->fee.'</option>';
         }       
         echo $html;
-        
     }
 
     //__appionments data Store__//
     public function appionmentStore(Request $request){
         $data = Appointment::insert([
-            'doctor_id' => $request->doctor,
-            'date' => $request->date,
-            'patient_name' => $request->patient_name,
+            'date'          => $request->date,
+            'doctor_id'     => $request->doctor_id,
+            'patient_name'  => $request->patient_name,
             'patient_phone' => $request->patient_phone,
-            'total_fee' => $request->total_fee,
-            'paid_amount' => $request->paid_amount,
+            'total_fee'     => $request->totalFeeAmount,
+            'paid_amount'   => $request->paid_amount,
         ]);
         return response()->json($data);
     }

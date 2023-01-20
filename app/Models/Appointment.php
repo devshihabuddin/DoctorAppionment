@@ -12,7 +12,7 @@ class Appointment extends Model
         'doctor_id','appointment_no','date','patient_name','patient_phone','total_fee','paid_amount'
     ];
 
-    // public function doctor(){
-    //     return $this->belongsTo(Doctor::class,'doctor_id');
-    // }
+    public function doctor(){
+        return $this->belongsTo(Doctor::class,'doctor_id');
+    }
 }
